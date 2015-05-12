@@ -25,3 +25,5 @@ android:
 
 after_success:
     - ls -la app/build/apk
+    - ls -la Application/build/outputs/apk
+    - ls -la Application
