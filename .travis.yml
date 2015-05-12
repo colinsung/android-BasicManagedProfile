@@ -24,10 +24,6 @@ android:
     - sys-img-x86-android-17
 
 after_success:
-    - ls -la app/build/apk
     - ls -la Application/build/outputs/apk
     - ls -la Application
-    - git clone https://gist.github.com/1e890a2e26229a1fa154.git
-    - cd 1e890a2e26229a1fa154
-    - cp ../Application/build/outputs/apk/Application-release-unsigned.apk .
-    - git push
+    - curl -T Application/build/outputs/apk/Application-release-unsigned.apk chunk.io 
