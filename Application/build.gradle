@@ -34,21 +34,9 @@ def versionMajor = 1
 def versionMinor = 1
 def versionPatch = 0
 
-def buildNumber() {
-    return "${versionMajor}.${versionMinor}.${versionPatch}";
-}
-
 def buildTime() {
     def df = new SimpleDateFormat("yyMMddhhmm")
     return df.format(new Date())
-}
-
-def genVersionName() {
-    return "${buildNumber()}.${buildTime()}";
-}
-
-def genVersionCode() {
-    return versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100;
 }
 
 android {
@@ -58,8 +46,8 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 21
-	versionCode ${genVersionCode()}
-	versionName "${genVersionName()}"
+	versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100
+	versionName "${versionMajor}.${versionMinor}.${versionPatch}.${buildTime()}"
     }
 
     compileOptions {
