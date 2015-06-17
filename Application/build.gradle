@@ -44,6 +44,7 @@ android {
     buildToolsVersion "22.0.1"
 
     defaultConfig {
+	applicationId "com.sample.my.app"
         minSdkVersion 21
         targetSdkVersion 21
 	versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100
