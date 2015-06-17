@@ -60,6 +60,18 @@ android {
                 keyPassword System.getenv("ANDROID_KEY_PASSWORD")
             }
         }
+    }else{
+	print "no ANDORID_KEYSTORE"
+        signingConfigs {
+            release {
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
     }
 
     compileOptions {
