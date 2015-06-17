@@ -51,7 +51,7 @@ android {
 	versionName "${versionMajor}.${versionMinor}.${versionPatch}.${buildTime()}"
     }
 
-    if(System.getenv("ANDROID_KEYSTORE")) {
+    if(System.getenv("ANDROID_KEYSTORE") != null) {
         signingConfigs {
             release {
                 storeFile file(System.getenv("ANDROID_KEYSTORE"))
