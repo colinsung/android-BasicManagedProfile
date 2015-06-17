@@ -47,7 +47,7 @@ android {
 	applicationId "com.sample.my.app"
         minSdkVersion 21
         targetSdkVersion 21
-	versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100
+	versionCode Integer.parseInt(buildTime())
 	versionName "${versionMajor}.${versionMinor}.${versionPatch}.${buildTime()}"
     }
 
